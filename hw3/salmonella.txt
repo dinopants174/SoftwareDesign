@@ -1,0 +1,10 @@
+Zoher Ghadyali
+Software Design 2014
+
+Computational Biology HW3 Discussion of Results:
+
+After running my gene_finder function with the Salmonella DNA and a threshold of approximately 716, the function outputted a list of two strings of amino acids. Each string corresponds to one protein.
+
+Using the gene-finding tool BLAST, the first string of amino acids was searched in the BLAST database and this outputted several strands of amino acids that my string corresponded to. The highest match for the first string was the needle length control protein for the Salmonella enterica species. The second highest match was the antigen presentation protein SpaN, also for the Salmonella enterica species.
+
+The second string of amino acids was also searched in the BLAST database and the highest match for this string was the hypothetical protein LTSEINV 4305 partial which also belongs to the Salmonella enterica. All of the matches to my string of amino acids are for hypothetical proteins for the Salmonella enterica. I believe this may be due to my high threshold because these results only match very small portions of my string of amino acids.
