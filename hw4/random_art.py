@@ -59,9 +59,9 @@ def remap_interval(val, input_interval_start, input_interval_end, output_interva
     return res    
     
 def create_image():
-    red_ch = build_random_function(1,3)
-    green_ch = build_random_function(1,3)
-    blue_ch = build_random_function(1,3)
+    red_ch = build_random_function(6,9)
+    green_ch = build_random_function(6,9)
+    blue_ch = build_random_function(6,9)
     
     im = Image.new("RGB", (350,350))
     pixels = im.load()
