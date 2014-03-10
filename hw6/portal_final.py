@@ -264,5 +264,5 @@ if __name__ == '__main__':
         model.update()
         view.draw()
         time.sleep(0.001)
-    
-    pygame.quit()
+        
+    image("plate.png", True)
