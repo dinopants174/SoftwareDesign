@@ -74,17 +74,17 @@ def create_image():
     are built for each channel. Then for each x value, function loops through all the
     y-values and plots each (x,y) pixel pair as a function of red, blue, and green """
     
-    red_ch = build_random_function(5,7) #produces three randomly generated equations
-    green_ch = build_random_function(1,3)
-    blue_ch = build_random_function(5,10)
+    red_ch = build_random_function(1,3) #produces three randomly generated equations
+    green_ch = build_random_function(5,7)
+    blue_ch = build_random_function(9,12)
     
-    im = Image.new("RGB", (350,350)) #loads an image of 350 x 350 px
+    im = Image.new("RGB", (700,700)) #loads an image of 350 x 350 px
     pixels = im.load()  #makes img into pixel map so can plot each pixel
     
-    for x in range(350):    #loops through every x-value from 0 to 349
-        x_val = remap_interval(x, 0, 349, -1, 1)    #remaps all x-values to [-1,1]
-        for y in range(350):    #loops through every y-value from 0 to 349 for each x-value
-            y_val = remap_interval(y, 0, 349, -1, 1)    #remaps all y-values to [-1,1]
+    for x in range(700):    #loops through every x-value from 0 to 349
+        x_val = remap_interval(x, 0, 699, -1, 1)    #remaps all x-values to [-1,1]
+        for y in range(700):    #loops through every y-value from 0 to 349 for each x-value
+            y_val = remap_interval(y, 0, 699, -1, 1)    #remaps all y-values to [-1,1]
             red_val = evaluate_random_function(red_ch, x_val, y_val)    #evaluates each random function for each x and y
             green_val = evaluate_random_function(green_ch, x_val, y_val)
             blue_val = evaluate_random_function(blue_ch, x_val, y_val)
