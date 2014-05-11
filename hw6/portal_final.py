@@ -226,8 +226,8 @@ def image(image,end):
     """Takes an image and displays it for a few seconds
     These are our punchline images, purely for artistic purposes"""
 
-    # I think these ar fantastic. Nice job with these!
-    
+    # I think these are fantastic. Nice job with these!
+
     time.sleep(1)
     startscreen = pygame.image.load(image).convert()
     screen.blit(startscreen,(175,75))
