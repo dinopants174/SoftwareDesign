@@ -15,11 +15,20 @@ class Portal_Platformer_Model:      #game encoded in model, view, controller for
         self.player = Player(40,40)
         self.portal_orange = 'null'
         self.portal_blue = 'null'
+        # Python has a None for precisely this reason. And its great for many reasons,
+        # chief among them, that you can test "if variable:" as though variable were a
+        # variable, and if it is None, it will return false. Use it. Love it.
         self.level = 0
         self.construct_environment(0)   #builds the first level immediately
         
     def construct_environment(self, number):
         """ Generates rectangles for every wall and the cake and stores it in the variable "walls" """
+
+        # Great! I love that this is a method that actually 'loads in' levels rather than them being
+        # hardcoded. I also do like that the worlds are held in a seperate file to avoid clutter. One
+        # good final step here might actually be to go all the way to pickling them and saving them in
+        # that format, but that is optional. Nice work here!
+
         self.walls = [] #initalizes empty list to hold the positions of all of our walls
         self.cake = None
         level = world   #world contains a list of lists of each level, consisting of W's, spaces, and C's
@@ -85,7 +94,9 @@ class Portal_Platformer_Model:      #game encoded in model, view, controller for
             self.construct_environment(self.level)  #reinitalizing empty objects / lists for the next level and puts player back to initial location
 
         if self.portal_blue != 'null' and self.portal_orange != 'null':
+            # Use the Nonetype here as noted above: its much cleaner
             if self.player.rect.colliderect(self.portal_orange.rectp): #Moves player from orange portal to blue portal
+                # And kill the dead code...
 #                print "Collision detected!"   #FOR DEBUGGING PURPOSES
                 xp = self.portal_blue.rectp.x
                 yp = self.portal_blue.rectp.y
@@ -193,6 +204,7 @@ class Wall:
     
 class Cake_top(object):
     """The icing on the cake """
+    # Haha. I appreciate the docstring.
     def __init__(self, pos):
          self.rect = pygame.Rect(pos[0], pos[1], 25, 10)
          
@@ -213,6 +225,9 @@ class Portal(object):
 def image(image,end):
     """Takes an image and displays it for a few seconds
     These are our punchline images, purely for artistic purposes"""
+
+    # I think these ar fantastic. Nice job with these!
+    
     time.sleep(1)
     startscreen = pygame.image.load(image).convert()
     screen.blit(startscreen,(175,75))
